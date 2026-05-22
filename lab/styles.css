@@ -1,0 +1,702 @@
+/* ============================================================
+   SYSTEM STYLES - SISTEMA DE FACTURACIÓN COMERCIAL (ECUADOR)
+   Diseñado con CSS3 Moderno - Enfoque Corporativo y Profesional
+   ============================================================ */
+
+/* ============================================================
+   1. VARIABLES CSS Y CONFIGURACIÓN GLOBAL
+   ============================================================ */
+:root {
+    /* Paleta de Colores Corporativos */
+    --color-primario: #1e3a8a;          /* Azul corporativo profundo */
+    --color-primario-hover: #172554;    /* Azul más oscuro para hover */
+    --color-secundario: #10b981;        /* Verde esmeralda para acciones positivas */
+    --color-peligro: #ef4444;           /* Rojo suave para eliminar */
+    --color-peligro-hover: #dc2626;     /* Rojo más intenso para hover */
+    
+    /* Fondos y Superficies */
+    --fondo-app: #f8fafc;               /* Gris ultra claro para el fondo general */
+    --fondo-contenedor: #ffffff;        /* Blanco puro para tarjetas y contenedores */
+    --borde-suave: #e2e8f0;             /* Gris claro para bordes sutiles */
+    
+    /* Tipografía y Colores de Texto */
+    --texto-principal: #1e293b;         /* Gris azulado oscuro para texto principal */
+    --texto-secundario: #64748b;        /* Gris medio para texto secundario */
+    --texto-blanco: #ffffff;            /* Blanco para texto sobre fondos oscuros */
+    --placeholder: #94a3b8;             /* Gris tenue para placeholders */
+    
+    /* Sombras y Bordes */
+    --sombra-suave: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --sombra-elevada: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --border-radius: 8px;               /* Bordes suavizados */
+    
+    /* Transiciones */
+    --transicion-suave: all 0.2s ease-in-out;
+}
+
+/* ============================================================
+   2. RESET Y ESTILOS BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--fondo-app);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   3. ENCABEZADOS Y TEXTOS
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primario);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.75em;
+}
+
+h1 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--borde-suave);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--texto-secundario);
+}
+
+strong {
+    color: var(--texto-principal);
+    font-weight: 600;
+}
+
+em {
+    color: var(--texto-secundario);
+    font-style: italic;
+}
+
+/* ============================================================
+   4. LÍNEAS DIVISORIAS (HR) - ESTILO REFINADO
+   ============================================================ */
+hr {
+    border: none;
+    border-top: 1px solid var(--borde-suave);
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+/* ============================================================
+   5. MENÚ DE NAVEGACIÓN - BARRA DE HERRAMIENTAS MODERNA
+   ============================================================ */
+nav {
+    background: var(--fondo-contenedor);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav button {
+    background: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transicion-suave);
+}
+
+nav button:hover {
+    background: var(--color-primario);
+    color: var(--texto-blanco);
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-suave);
+}
+
+nav button:active {
+    transform: translateY(0);
+}
+
+/* Botón activo (página actual) - se puede añadir clase .active vía JS si se desea */
+nav button.active,
+nav a[href*="index.html"] button:where([href*="index.html"]:not(:hover)) {
+    background: var(--color-primario);
+    color: var(--texto-blanco);
+}
+
+/* ============================================================
+   6. ENCABEZADO PRINCIPAL (HEADER)
+   ============================================================ */
+header {
+    background: var(--fondo-contenedor);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    border: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+header h3 {
+    color: var(--texto-secundario);
+    font-weight: 400;
+    margin: 0.25rem 0;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   7. CONTENIDO PRINCIPAL (MAIN)
+   ============================================================ */
+main {
+    background: var(--fondo-contenedor);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 1.5rem;
+}
+
+main ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+main li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--borde-suave);
+    color: var(--texto-secundario);
+}
+
+main li:last-child {
+    border-bottom: none;
+}
+
+main li strong {
+    color: var(--color-primario);
+}
+
+/* ============================================================
+   8. FORMULARIO DE CLIENTES - DISEÑO GRID LIMPIO
+   ============================================================ */
+#formularioCliente {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+}
+
+#formularioCliente label {
+    font-weight: 500;
+    color: var(--texto-principal);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+#formularioCliente input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--borde-suave);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    background: var(--fondo-app);
+    transition: var(--transicion-suave);
+}
+
+#formularioCliente input::placeholder {
+    color: var(--placeholder);
+    opacity: 1;
+}
+
+#formularioCliente input:hover {
+    border-color: var(--color-primario);
+}
+
+#formularioCliente input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    background: var(--fondo-contenedor);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ============================================================
+   9. BOTONES DE ACCIÓN (AGREGAR, ELIMINAR, IMPRIMIR)
+   ============================================================ */
+button[type="button"],
+button[onclick] {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transicion-suave);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Botón primario - Agregar Producto */
+button[onclick*="agregarProducto"] {
+    background: var(--color-secundario);
+    color: var(--texto-blanco);
+}
+
+button[onclick*="agregarProducto"]:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-suave);
+}
+
+/* Botón de peligro - Eliminar */
+button[onclick*="eliminar"] {
+    background: var(--color-peligro);
+    color: var(--texto-blanco);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+button[onclick*="eliminar"]:hover {
+    background: var(--color-peligro-hover);
+}
+
+/* Botón de imprimir */
+button[onclick*="imprimirFactura"] {
+    background: var(--color-primario);
+    color: var(--texto-blanco);
+    margin-top: 0.5rem;
+}
+
+button[onclick*="imprimirFactura"]:hover {
+    background: var(--color-primario-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-suave);
+}
+
+/* ============================================================
+   10. TABLA DE PRODUCTOS - DISEÑO PROFESIONAL
+   ============================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: var(--fondo-contenedor);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+}
+
+thead {
+    background: var(--color-primario);
+    color: var(--texto-blanco);
+}
+
+th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+th:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+th:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--borde-suave);
+    transition: background-color 0.15s ease;
+}
+
+/* Zebra striping sutil */
+tbody tr:nth-of-type(even) {
+    background-color: rgba(248, 250, 252, 0.5);
+}
+
+tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.04);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+}
+
+/* Inputs integrados dentro de la tabla - sin bordes visibles */
+td input {
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    transition: var(--transicion-suave);
+}
+
+td input::placeholder {
+    color: var(--placeholder);
+    font-size: 0.9rem;
+}
+
+td input:hover {
+    border-color: var(--borde-suave);
+    background: var(--fondo-app);
+}
+
+td input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    background: var(--fondo-contenedor);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Celdas de texto total (span) */
+td span[id^="total-fila"] {
+    font-weight: 600;
+    color: var(--color-primario);
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/* Celda de acciones */
+td:last-child {
+    text-align: center;
+    min-width: 120px;
+}
+
+/* Columnas con ancho específico */
+tbody td:nth-child(1) { /* Cantidad */
+    width: 10%;
+    text-align: center;
+}
+tbody td:nth-child(2) { /* Descripción */
+    width: 45%;
+}
+tbody td:nth-child(3) { /* Precio */
+    width: 15%;
+    text-align: right;
+}
+tbody td:nth-child(4) { /* Total fila */
+    width: 15%;
+    text-align: right;
+}
+
+/* ============================================================
+   11. SECCIÓN DE TOTALES - ALINEACIÓN DERECHA Y DESTACADO
+   ============================================================ */
+main > p strong,
+main h3 strong {
+    color: var(--texto-principal);
+}
+
+/* Contenedor para alinear totales a la derecha */
+main > p[id^="subtotal"],
+main > p[id^="iva"],
+main > h3 {
+    text-align: right;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+}
+
+#subtotal,
+#iva,
+#totalFinal {
+    font-family: monospace;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+/* TOTAL FINAL destacado */
+h3 {
+    margin-top: 1rem !important;
+    font-size: 1.5rem !important;
+    color: var(--color-primario) !important;
+    border-top: 2px solid var(--borde-suave);
+    padding-top: 1rem;
+}
+
+h3 #totalFinal {
+    font-size: 1.4rem;
+    color: var(--color-primario);
+}
+
+/* ============================================================
+   12. PIE DE PÁGINA (FOOTER)
+   ============================================================ */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--borde-suave);
+    margin-top: 2rem;
+}
+
+/* ============================================================
+   13. UTILIDADES Y DETALLES ADICIONALES
+   ============================================================ */
+/* Aviso informativo */
+main p em {
+    display: block;
+    padding: 0.75rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1rem;
+}
+
+/* Responsive básico para móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    nav button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    #formularioCliente {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Tabla con scroll horizontal en móviles */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 0.6rem 0.75rem;
+    }
+    
+    /* Totales centrados en móvil */
+    main > p[id^="subtotal"],
+    main > p[id^="iva"],
+    main > h3 {
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   14. REGLAS DE IMPRESIÓN - @media print (CRÍTICO)
+   ============================================================ */
+@media print {
+    /* Reset de estilos para impresión limpia */
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    /* OCULTAR elementos de navegación y controles */
+    nav,
+    button,
+    [onclick*="agregarProducto"],
+    [onclick*="eliminar"],
+    [onclick*="imprimirFactura"],
+    footer {
+        display: none !important;
+    }
+    
+    /* Ajustar contenedores para papel */
+    header, main {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+    }
+    
+    /* Encabezado de factura optimizado para impresión */
+    header h1 {
+        font-size: 18pt;
+        border-bottom: 2px solid #000;
+        padding-bottom: 8pt;
+        margin-bottom: 8pt;
+        color: #000 !important;
+    }
+    
+    header h3,
+    header p {
+        color: #333 !important;
+        font-size: 10pt;
+        margin: 2pt 0;
+    }
+    
+    /* Formulario: mostrar solo datos, sin estilos de input */
+    #formularioCliente {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4pt 20pt;
+        margin: 10pt 0;
+    }
+    
+    #formularioCliente label {
+        font-weight: bold;
+        color: #000;
+        font-size: 9pt;
+    }
+    
+    #formularioCliente input {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        color: #000 !important;
+        font-size: 10pt;
+    }
+    
+    /* Tabla optimizada para impresión */
+    table {
+        width: 100% !important;
+        border-collapse: collapse;
+        margin: 15pt 0;
+        box-shadow: none !important;
+    }
+    
+    thead {
+        background: #f1f5f9 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    th {
+        border-bottom: 2px solid #000;
+        padding: 6pt 8pt;
+        font-size: 9pt;
+        color: #000 !important;
+    }
+    
+    tbody tr {
+        border-bottom: 1px solid #ccc;
+    }
+    
+    td {
+        padding: 5pt 8pt;
+        border: none;
+        color: #000 !important;
+    }
+    
+    td input {
+        border: none !important;
+        background: transparent !important;
+        padding: 0 !important;
+        color: #000 !important;
+    }
+    
+    /* Totales: alineación derecha y destacados */
+    main > p,
+    main h3 {
+        text-align: right !important;
+        margin: 3pt 0;
+        padding: 0;
+    }
+    
+    #subtotal,
+    #iva,
+    #totalFinal {
+        color: #000 !important;
+        font-weight: bold;
+        font-family: monospace;
+    }
+    
+    h3 {
+        font-size: 14pt !important;
+        margin-top: 10pt !important;
+        border-top: 2px solid #000;
+        padding-top: 8pt;
+    }
+    
+    /* Evitar saltos de página incómodos */
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    
+    /* Asegurar que los colores se impriman correctamente */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Márgenes de página estándar */
+    @page {
+        margin: 1.5cm 1cm;
+        size: A4;
+    }
+}
