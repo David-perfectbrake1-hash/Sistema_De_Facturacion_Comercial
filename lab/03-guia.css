@@ -1,0 +1,75 @@
+/* 03-guia.css */
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA LA PÁGINA DE GUÍA (acercaDe.html)
+   ========================================================================== */
+
+/* Contenedor principal de cada bloque de explicación */
+.guia-seccion {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db; /* Línea azul lateral para resaltar la sección */
+    border-radius: 4px;
+}
+
+/* Títulos de las secciones principales */
+.guia-seccion h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+/* Subtítulos dentro de la explicación de JavaScript */
+.guia-seccion h3 {
+    color: #16a085;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Formato para las listas de viñetas */
+.guia-seccion ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.guia-seccion li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Estilo para resaltar los nombres de archivos, funciones o etiquetas (code) */
+.guia-seccion code {
+    background-color: #ecf0f1;
+    color: #e74c3c;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   SECCIÓN ESPECIAL: RESUMEN DE 1 MINUTO
+   ========================================================================== */
+
+/* Bloque destacado para la exposición rápida */
+.resumen-exposicion {
+    background-color: #e8f8f5; /* Fondo verde claro/pastel */
+    border-left: 5px solid #2ecc71; /* Línea verde lateral */
+}
+
+.resumen-exposicion h2 {
+    color: #1e824c;
+}
+
+/* Estilo para el cuadro de texto del blockquote (la cita) */
+.resumen-exposicion blockquote {
+    margin: 10px 0 0 0;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-style: italic;
+    color: #34495e;
+    line-height: 1.6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}

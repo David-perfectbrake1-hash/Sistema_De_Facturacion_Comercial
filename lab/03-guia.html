@@ -1,0 +1,168 @@
+<!-- 03-guia.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca del Proyecto - Guía Técnica</title>
+    <!-- Los estilos están separados en su propia hoja de cálculo externa -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="03-guia.css">
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <a href="index.html"><button>Portada</button></a>
+        <a href="01-facturacion.html"><button>Simulador de Facturación</button></a>
+        <a href="02-marcoTeorico.html"><button>Marco Teórico</button></a>
+        <a href="03-guia.html"><button>Guía del Proyecto</button></a>
+    </nav>
+    <hr>
+
+    <header>
+        <h1>📘 Guía del Proyecto</h1>
+        <p>Estructura y funcionamiento del Sistema de Facturación Comercial.</p>
+    </header>
+    <hr>
+
+    <main>
+        <!-- SECCIÓN 1: RESUMEN GENERAL -->
+        <section class="guia-seccion">
+            <h2>📌 ¿De qué trata el proyecto en general?</h2>
+            <p>
+                Es un <strong>Sistema de Facturación Comercial</strong> web. 
+                Su objetivo es simular la creación de una factura comercial en Ecuador, 
+                permitiendo ingresar datos del cliente, añadir productos dinámicamente, 
+                calcular automáticamente los totales con un <strong>IVA del 15%</strong>, 
+                e incluso imprimir el documento. 
+                Además, cuenta con una sección educativa sobre conceptos tributarios.
+            </p>
+        </section>
+        <hr>
+
+        <!-- SECCIÓN 2: LAS PÁGINAS -->
+        <section class="guia-seccion">
+            <h2>🗺️ Estructura del Proyecto (Las 3 Páginas)</h2>
+            <p>
+                El sistema está dividido en tres archivos HTML principales que comparten un mismo menú de navegación:
+            </p>
+            <ul>
+                <li><strong><code>index.html</code> (Portada):</strong> 
+                    Es la página de bienvenida. 
+                    Sirve como punto de partida y tiene un aviso que invita a usar el menú para navegar.
+                </li>
+                <li><strong><code>01-facturacion.html</code> (Simulador):</strong> 
+                    Es la herramienta central. 
+                    Contiene el formulario para los datos del cliente, 
+                    la tabla donde se muestran los productos 
+                    y la sección de los totales calculados.
+                </li>
+                <li><strong><code>02-marcoTeorico.html</code> (Teoría):</strong> 
+                    Una sección educativa interactiva. 
+                    Usa pestañas desplegables (<code>&lt;details&gt;</code>) para explicar conceptos como: 
+                        el IVA, 
+                        productos tarifa 0% 
+                        y subtotales.
+                    </li>
+            </ul>
+        </section>
+        <hr>
+
+        <!-- SECCIÓN 3: JAVASCRIPT -->
+        <section class="guia-seccion">
+            <h2>🛠️ ¿Cómo funciona la lógica? (<code>01-facturacion.js</code>)</h2>
+            <p>
+                Este archivo de JavaScript. 
+                Se encarga de hacer todo dinámico mediante las siguientes secciones:
+            </p>
+
+            <h3>1. Memoria de la Aplicación (El Estado)</h3>
+            <ul>
+                <li><strong><code>productosParaFacturar</code>:</strong> 
+                    Es un arreglo de objetos en memoria RAM que guarda la lista de productos 
+                    (ID, cantidad, descripción y precio).
+                </li>
+                <li><strong><code>contadorIds</code>:</strong> 
+                    Es un contador para asegurar que cada producto nuevo tenga un identificador único.
+                </li>
+            </ul>
+
+            <h3>2. Gestión de la Interfaz (Dibujar en pantalla)</h3>
+            <ul>
+                <li><strong><code>pintarProductos()</code>:</strong> 
+                    Esta función limpia la tabla de la pantalla 
+                    y la vuelve a dibujar desde cero leyendo el arreglo de memoria. 
+                    Tambien genera los campos de texto y números para cada fila.
+                </li>
+            </ul>
+
+            <h3>3. Acciones del Usuario (Interactividad)</h3>
+            <ul>
+                <li><strong><code>agregarProducto()</code>:</strong> 
+                    Crea un producto vacío y lo mete al arreglo.
+                </li>
+                <li><strong><code>eliminarProducto(id)</code>:</strong> 
+                    Busca el producto por su ID y lo borra del arreglo.
+                </li>
+                <li><strong><code>actualizarProducto()</code>:</strong> 
+                    Modifica los valores (cantidad, descripción o precio) 
+                    en tiempo real dentro del arreglo 
+                    en el momento en que el usuario escribe en los campos.
+                </li>
+            </ul>
+
+            <h3>4. Lógica Matemática (Cálculos)</h3>
+            <ul>
+                <li><strong><code>calcularTotal()</code>:</strong> 
+                    Recorre la lista de productos, 
+                    multiplica <strong>Cantidad × Precio</strong> por cada fila, 
+                    calcula el Subtotal, 
+                    le aplica el <strong>15% de IVA</strong> 
+                    y saca el Total Final. 
+                    Al terminar, actualiza los números en la pantalla.
+                </li>
+            </ul>
+
+            <h3>5. Utilidades</h3>
+            <ul>
+                <li><strong><code>imprimirFactura()</code>:</strong> 
+                    Llama a la función nativa del navegador 
+                    (<code>window.print()</code>) 
+                    para abrir la ventana de impresión de la factura.
+                </li>
+            </ul>
+        </section>
+        <hr>
+
+        <!-- SECCIÓN 4: RESUMEN EXPOSICIÓN -->
+        <section class="guia-seccion resumen-exposicion">
+            <h2>💡 Resumen: </h2>
+            <blockquote>
+                "El código es un simulador de facturación. 
+                Los archivos 
+                <strong>
+                    HTML
+                </strong> 
+                estructuran visualmente la portada, 
+                el formulario del cliente con su tabla de productos 
+                y el marco teórico. 
+                El archivo
+                <strong>
+                    01-facturacion.js (JavaScript)
+                </strong> 
+                guarda los productos en un arreglo, 
+                actualiza la pantalla automáticamente cuando agregamos o borramos filas, 
+                calcula los subtotales con el <strong>15% de IVA</strong> en tiempo real 
+                y nos deja mandar a imprimir la factura."
+            </blockquote>
+        </section>
+    </main>
+    <hr>
+
+    <footer>
+        <p>© 2026 - Proyecto Sistema de Facturación Comercial</p>
+    </footer>
+
+</body>
+</html>

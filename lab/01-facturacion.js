@@ -1,4 +1,4 @@
-// script.js
+// 01-facturacion.js
 // === ESTADO DE LA APLICACIÓN ===
 // Empezamos con el primer producto ya cargado en el arreglo de memoria
 let productosParaFacturar = [
