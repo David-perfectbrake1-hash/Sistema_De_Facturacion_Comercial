@@ -52,7 +52,7 @@ function pintarProductos() {
     }
 
     // Cada vez que pintamos la tabla, recalculamos los totales generales abajo
-    calcularTotalGenerales();
+    calcularTotal();
 }
 
 // === ACCIONES DEL USUARIO ===
@@ -92,7 +92,7 @@ function actualizarCantidad(idProducto, nuevaCantidad) {
             break;
         }
     }
-    calcularTotalGenerales()
+    calcularTotal()
 }
 
 function actualizarDescripcion(idProducto, nuevaDescripcion) {
@@ -102,7 +102,7 @@ function actualizarDescripcion(idProducto, nuevaDescripcion) {
             break;
         }
     }
-    calcularTotalGenerales()
+    calcularTotal()
 }
 
 function actualizarPrecio(idProducto, nuevoPrecio) {
@@ -112,7 +112,7 @@ function actualizarPrecio(idProducto, nuevoPrecio) {
             break;
         }
     }
-    calcularTotalGenerales()
+    calcularTotal()
 }
 
 function actualizarProducto(idProducto, propiedad, valor) {
@@ -126,7 +126,7 @@ function actualizarProducto(idProducto, propiedad, valor) {
 }
 
 // === LÓGICA DE CÁLCULOS MATEMÁTICOS ===
-function calcularTotalGenerales() {
+function calcularTotal() {
     let sumaDeTodosLosSubtotales = 0;
 
     // Sumamos los totales de cada producto directo desde el arreglo de memoria

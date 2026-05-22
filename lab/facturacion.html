@@ -10,9 +10,8 @@
         <!-- Este menú se repite en todas las páginas para poder movernos entre ellas -->
         <nav>
             <a href="index.html"><button>Portada</button></a>
-            <a href="facturacion.html"><button>Facturación</button></a>
-            <a href="clientes.html"><button>Clientes</button></a>
-            <a href="productos.html"><button>Productos</button></a>
+            <a href="facturacion.html"><button>Simulador de Facturación</button></a>
+            <a href="marcoTeorico.html"><button>Marco Teórico</button></a>
         </nav>
         <hr> <!-- Línea divisoria -->
 
@@ -72,15 +71,7 @@
                 </tr>
             </thead>
             <tbody id="cuerpoTabla">
-                <tr id="fila-1">
-                    <td><input type="number" id="cantidad-1" value="1" oninput="calcularTotal()" placeholder="0"></td>
-                    <td><input type="text" placeholder=" Descripción del producto "></td>
-                    <td><input type="number" id="precio-1" oninput="calcularTotal()" placeholder="0.00"></td>
-                    <td><span id="total-fila-1">0.00</span></td>
-                    <td>
-                        <button type="button" onclick="eliminarFila('fila-1')">ELIMINAR</button>
-                    </td>
-                </tr>
+                <!-- Tabla dinámica -->
             </tbody>
         </table>
         <br>

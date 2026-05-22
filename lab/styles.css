@@ -700,3 +700,136 @@ main p em {
         size: A4;
     }
 }
+
+/* ============================================================
+   15. SECCIÓN ESPECÍFICA: MARCO TEÓRICO (DESPLEGABLES)
+   ============================================================ */
+
+/* Contenedor del Tema Principal (<details>) */
+.tema-principal {
+    background: var(--fondo-contenedor);
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    transition: var(--transicion-suave);
+}
+
+/* Cambia sutilmente el borde al abrir el tema principal */
+.tema-principal[open] {
+    border-color: var(--color-primario);
+    box-shadow: var(--sombra-elevada);
+}
+
+/* Título del Tema Principal (<summary>) */
+.tema-principal > summary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    list-style: none; /* Quita la flecha nativa en algunos navegadores */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transicion-suave);
+}
+
+/* Añade un indicador visual personalizado antes del texto */
+.tema-principal > summary::before {
+    content: "📁";
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+/* Rota el icono si el contenedor está abierto */
+.tema-principal[open] > summary::before {
+    content: "📂";
+    transform: rotate(90deg);
+}
+
+.tema-principal > summary:hover {
+    background-color: rgba(30, 58, 138, 0.04);
+    border-radius: 6px;
+}
+
+/* Bloque contenedor que agrupa los subtemas internos */
+.contenedor-subtemas {
+    padding: 0.5rem 1rem 1rem 1.5rem;
+    border-left: 3px solid var(--borde-suave);
+    margin: 0.5rem 0 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Estilos individuales para los Subtemas (Concepto, Características, etc.) */
+.subtema {
+    background: var(--fondo-app);
+    border-radius: 6px;
+    padding: 0.25rem;
+    transition: var(--transicion-suave);
+}
+
+.subtema[open] {
+    background: var(--fondo-contenedor);
+    border: 1px solid var(--borde-suave);
+}
+
+/* Títulos de los subtemas */
+.subtema > summary {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: var(--transicion-suave);
+}
+
+.subtema > summary:hover {
+    color: var(--color-primario);
+}
+
+/* Margen adaptativo interno para textos, listas y tablas de los subtemas */
+.subtema p, 
+.subtema ul, 
+.subtema table {
+    margin: 0.75rem 1rem 0.75rem 1.25rem;
+}
+
+/* Pequeño ajuste visual para las listas dentro de la teoría */
+.subtema ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+}
+
+.subtema li {
+    border-bottom: none; /* Quita el estilo dashed de la factura */
+    padding: 0.25rem 0;
+}
+
+/* Estilo para las tablas de ejemplos de cálculos dentro del marco teórico */
+.subtema table {
+    border: 1px solid var(--borde-suave);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.subtema th {
+    background: var(--texto-secundario); /* Color neutro para diferenciarlo de la factura */
+    padding: 0.6rem 1rem;
+}
+
+.subtema tbody tr:hover {
+    background-color: var(--fondo-app);
+}
+
+/* Ocultar el marco teórico por completo al momento de imprimir la factura */
+@media print {
+    .tema-principal,
+    .contenedor-subtemas,
+    .subtema {
+        display: none !important;
+    }
+}
