@@ -1,0 +1,75 @@
+/* 02-marcoTeorico.css */
+/* Estilos para calculadoras interactivas */
+.calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    max-width: 400px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.input-group input {
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-calcular {
+    padding: 10px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-calcular:hover { background: #0b5ed7; }
+
+.resultado-flujo {
+    margin-top: 12px;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid #198754;
+}
+
+.resultado-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.resultado-tabla th, .resultado-tabla td {
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.resultado-tabla tr:last-child td { font-weight: bold; border-bottom: none; }
+.resultado-tabla tr:last-child td:last-child { color: #198754; }
+
+/* Estilo para los inputs que el usuario no puede modificar */
+.input-bloqueado {
+    background-color: #e9ecef; /* Gris claro de bloqueo estándar */
+    color: #495057;
+    cursor: not-allowed; /* Cambia el puntero por el símbolo de "prohibido" */
+    border-color: #ced4da;
+}
